@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <style>
+    #calculator {
+      width: 200px;     
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #bee9e0;
+      text-align: center;
+    }
+    input[type="button"] {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+      margin: 3px;   
+      margin-top: 4px;         
+    }
+    input#resultField {
+        background-color: aqua;
+        font-size: 12pt;
+        text-align: center;
+        margin-top: 2px;
+        font-style: italic;
+    }
+    input#inputField {
+        font-size: 10pt;
+        margin-top: 2px;
+    }
+    footer {
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 65px;
+        margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="calculator">
+    <input type="text" id="resultField" readonly>
+    <input type="text" id="inputField">
+    <br>
+    <input type="button" value="1" onclick="appendToInput('1')">
+    <input type="button" value="2" onclick="appendToInput('2')">
+    <input type="button" value="3" onclick="appendToInput('3')">
+    <br>
+    <input type="button" value="4" onclick="appendToInput('4')">
+    <input type="button" value="5" onclick="appendToInput('5')">
+    <input type="button" value="6" onclick="appendToInput('6')">
+    <br>
+    <input type="button" value="7" onclick="appendToInput('7')">
+    <input type="button" value="8" onclick="appendToInput('8')">
+    <input type="button" value="9" onclick="appendToInput('9')">
+    <br>
+    <input type="button" value="0" onclick="appendToInput('0')">
+    <input type="button" value="+" onclick="appendToInput('+')">
+    <input type="button" value="-" onclick="appendToInput('-')">
+    <br>
+    <input type="button" value="*" onclick="appendToInput('*')">
+    <input type="button" value="/" onclick="appendToInput('/')">
+    <input type="button" value="=" onclick="calculate()">
+    <br>
+    <input type="button" value="C" onclick="clearInput()">
+    <br>
+    
+  </div>
+
+  <script>
+    function appendToInput(value) {
+      document.getElementById('inputField').value += value;
+    }
+
+    function calculate() {
+      var input = document.getElementById('inputField').value;
+      var result = eval(input);
+      document.getElementById('resultField').value = result;
+    }
+
+    function clearInput() {
+      document.getElementById('inputField').value = '';
+      document.getElementById('resultField').value = '';
+    }
+  </script>
+</body>
+<footer>&copy; By Eduardo</footer>
+</html>
