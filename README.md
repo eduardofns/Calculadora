@@ -1,2 +1,4 @@
 # Calculadora
- Calculadora HTML/CSS/JS
+ Calculadora feita em HTML/CSS/JS
+
+
